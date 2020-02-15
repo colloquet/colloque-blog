@@ -55,7 +55,7 @@ const Bio = () => {
         }}
       />
       <p>
-        Front-End Developer
+        Colloque Tsui - Front-End Developer
         <br />
         <a href={`https://github.com/${social.github}`}>GitHub</a>
         &nbsp; &nbsp;
