@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Colloque's Blog`,
     author: `Colloque Tsui`,
-    description: `A blog to share JavaScript related stuff`,
+    description: `A blog to share Front-end related stuff`,
     siteUrl: `https://blog.colloque.io/`,
     social: {
       twitter: `colloquet`,

@@ -1,7 +1,7 @@
 {
   "name": "colloque-blog",
   "private": true,
-  "description": "A blog to share JavaScript related stuff",
+  "description": "A blog to share Front-end related stuff",
   "version": "0.1.0",
   "author": "Colloque Tsui <colloquet@gmail.com>",
   "bugs": {
