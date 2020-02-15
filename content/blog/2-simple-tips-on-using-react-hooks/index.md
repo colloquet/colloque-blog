@@ -6,7 +6,7 @@ date: '2020-02-15T10:10:43.769Z'
 I have been using React Hooks for a few months now and I am absolutely loving it! Today I would like to share 2 simple tips that I have learned along the way. Hopefully you will find them useful!
 
 ### useEffect for API requests
-A common scenario when writing component is to request some data from a REST API and then display them to the users. To do this using hooks, we often do the fetching inside the `useEffect` hook like so:
+One common use case for `useEffect` hook is to fetch some data from REST API and display them:
 
 ```js 
 useEffect(() => {
@@ -21,7 +21,7 @@ useEffect(() => {
 
 This looks fine at first glance but there are actually 2 potential bugs here:
 1. If user navigate away before the API returns, this will cause a set state to an unmounted component which may lead to memory leak.
-2. If `userId` changes before the previous request returns, this will cause the component to send another request which may lead to race condition (The first request returns slower than the second request and override the state).
+2. If `userId` changes before the previous request returns, this will cause the component to send another request which may lead to race condition (The first request returns after the second one and override the state).
 
 To prevent those bugs we can simply add a local variable `ignore`:
 
@@ -45,7 +45,7 @@ useEffect(() => {
 
 `ignore` will be set to true when ever the component is unmounted or the dependency array has changed (`userId` changed in this case). Therefore `setUserData` will not be called!
 
-This is actually documented in [React’s official documentation](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) but I think this is very useful and I want to share this to more people!
+This pattern is documented in [React’s official documentation](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies).
 
 ### useDeepMemo
 Sometimes when we write custom hooks we want that hook to be able to take a dynamic object or array as input. For example consider this `useAPI` custom hook:

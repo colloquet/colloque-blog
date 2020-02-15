@@ -60,6 +60,8 @@ const Bio = () => {
         <a href={`https://github.com/${social.github}`}>GitHub</a>
         &nbsp; &nbsp;
         <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+        &nbsp; &nbsp;
+        <a href="mailto:colloquet@gmail.com">Email</a>
       </p>
     </div>
   );
