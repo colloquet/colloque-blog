@@ -45,7 +45,7 @@ useEffect(() => {
 
 `ignore` will be set to true when ever the component is unmounted or the dependency array has changed (`userId` changed in this case). Therefore `setUserData` will not be called!
 
-This is actually documented in [React’s official documentation]([Hooks FAQ – React](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) but I think this is very useful and I want to share this to more people!
+This is actually documented in [React’s official documentation](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) but I think this is very useful and I want to share this to more people!
 
 ### useDeepMemo
 Sometimes when we write custom hooks we want that hook to be able to take a dynamic object or array as input. For example consider this `useAPI` custom hook:
