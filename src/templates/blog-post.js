@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -10,6 +11,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
+  let disqusConfig = {
+    url: `${data.site.siteMetadata.siteUrl + location.pathname}`,
+    identifier: post.id,
+    title: post.frontmatter.title,
+  };
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -40,12 +46,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
+            marginTop: rhythm(3),
             marginBottom: rhythm(1),
           }}
         />
         <footer>
           <Bio />
         </footer>
+        <hr
+          style={{
+            marginBottom: rhythm(1),
+          }}
+        />
+        <div style={{ margin: `${rhythm(1)} 0` }}>
+          <Disqus config={disqusConfig} />
+        </div>
       </article>
 
       <nav>
@@ -85,6 +100,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
