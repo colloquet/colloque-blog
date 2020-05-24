@@ -24,7 +24,7 @@ const output = {
 };
 ```
 
-This is great, you pass it a list of user IDs and you can a list of user objects. You can simply do the fetching inside the list component and render the items after getting the list of user objects. This is simple enough, but let's make things more challenging.
+This is great, you pass in a list of user IDs and you get a list of user objects. You can simply do the fetching inside the list component and render the items after getting the list of user objects. This is simple enough, but let's make things more challenging.
 
 What if there is a new component that also needs to fetch a list of users? The list of user ID might be different we cannot abstract the fetching logic because it is at the other side of the React tree.
 
