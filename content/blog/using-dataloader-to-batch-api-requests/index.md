@@ -162,5 +162,5 @@ From my experience, there is one tiny thing that bothers me when using DataLoade
 
 ### Conclusion
 
-By using DataLoader, you can easily batch requests initiated from different components anywhere in the render tree, and the result will be cached automatically, you also have the power to customize the scheduler and caching behavior. I have used React Hook as an example but you can easily use it in any other framework as well. What do you think of this pattern! Is there any other pitfalls that I haven't considered? Let me know!
+By using DataLoader, you can easily batch requests initiated from different components anywhere in the render tree, and the result will be cached automatically, you also have the power to customize the scheduler and caching behavior. I have used React Hook as an example but you can easily use it in any other framework as well. What do you think of this pattern? Is there any other pitfalls that I haven't considered? Let me know!
 
